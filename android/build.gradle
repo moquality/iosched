@@ -63,7 +63,7 @@ android {
                 "\"${show_io15_request_social_panel_time}\"")
     }
 
-    signingConfigs {
+/*    signingConfigs {
         debug {
             storeFile file("../android/debug.keystore")
             storePassword "android"
@@ -71,6 +71,7 @@ android {
             keyPassword "android"
         }
     }
+*/
 
     buildTypes {
         debug {
