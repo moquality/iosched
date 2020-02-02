@@ -9,11 +9,34 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: Build project
+      run: ./gradlew build
+    - name: List assets
+      run: tree build
+#     - name: Create release
+#       uses: actions/create-release@v1
+#       with: 
+#         tag_name: ${{ github.ref }}
+#         release_name: Release ${{ github.ref }}
+#         draft: false
+#         prerelease: false
+#     - name: Upload Release Asset
+#         id: upload-release-asset 
+#         uses: actions/upload-release-asset@v1.0.1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+#           asset_path: ./my-artifact.zip
+#           asset_name: my-artifact.zip
+#           asset_content_type: application/zip
     - name: Run a multi-line script
       run: |
-        ./gradlew build
+        echo ls
         ls
+        echo ls build
+        ls build
+        echo ls mobile
+        ls mobile
         echo Add other actions to build,
         echo test, and deploy your project.
