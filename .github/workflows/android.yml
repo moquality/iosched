@@ -11,8 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build project
       run: ./gradlew build
-    - name: List assets
-      run: tree build
 #     - name: Create release
 #       uses: actions/create-release@v1
 #       with: 
