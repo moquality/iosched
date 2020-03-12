@@ -36,7 +36,7 @@ class MainApplication : DaggerApplication() {
 
     override fun onCreate() {
         // ThreeTenBP for times and dates, called before super to be available for objects
-        AndroidThreeTen.init_xyz(this)
+        AndroidThreeTen.init(this)
 
         // Enable strict mode before Dagger creates graph
         if (BuildConfig.DEBUG) {
